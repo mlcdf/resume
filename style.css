@@ -1,0 +1,198 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text-main: #111111;
+  --page-width: 900px;
+  --copy-font-size: 1.125rem;
+}
+
+@font-face {
+  font-family: HK Grotesk;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+    format("opentype");
+}
+@font-face {
+  font-family: HK Grotesk;
+  font-weight: bold;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+    format("opentype");
+}
+
+body {
+  font-family: "HK Grotesk", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  max-width: var(--page-width);
+  margin: auto;
+}
+
+header {
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+
+.divider {
+  border-bottom: solid 2px #111111;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  margin-right: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+  letter-spacing: 1px;
+}
+
+main {
+  display: flex;
+  flex-flow: column wrap;
+  column-gap: 4%;
+  row-gap: 24px;
+   /* Your container needs a fixed height, and it 
+   * needs to be taller than your tallest column. */
+  height: 1080px; 
+}
+
+main::before,
+main::after {
+  content: "";
+  flex-basis: 100%;
+  width: 0;
+  order: 2;
+}
+
+.item {
+  width: 48%;
+}
+
+.about {
+  margin-top: 1rem;
+}
+
+.date {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.establishment {
+  font-size: 1.25rem;
+  margin-bottom: .25rem;
+}
+
+.description {
+  font-size: var(--copy-font-size);
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: var(--copy-font-size);
+  margin-top: 0;
+  margin-bottom: .75rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+li {
+  margin-bottom: .5rem;
+  font-size: var(--copy-font-size);
+}
+
+footer {
+  font-size: var(--copy-font-size);
+  text-align: center;
+}
+
+.print-notice {
+  display: inline-block;
+  margin: auto;
+  text-align: center;
+  border-radius: 6px;
+  padding: .25rem .5rem;
+  background-color: #111111;
+  color: #fafafa;
+}
+
+kbd {
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.heart {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  transform: rotate(8deg);
+  top: 0px;
+  right: -8px;
+}
+
+@media print {
+  @page {
+      margin: 2.00cm 1.40cm;
+      size: A4;
+  }
+    
+  html, body {
+    font-size: 12px;
+    margin-top: 0;
+  }
+  
+  .print-notice {
+    display: none;
+  }
+  
+  main {
+    height: 840px;
+    column-gap: 6%;
+  }
+  
+  .item {
+    width: 47%;
+  }
+  
+  header {
+    margin-top: 0;
+  }
+  
+  h1 {
+    margin-top: 0;
+  }
+  
+  footer {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .heart {
+      top: -2px;
+  }
+}
