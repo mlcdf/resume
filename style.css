@@ -65,7 +65,7 @@ main {
   row-gap: 24px;
    /* Your container needs a fixed height, and it 
    * needs to be taller than your tallest column. */
-  height: 1080px; 
+  height: 1120px; 
 }
 
 main::before,
@@ -194,5 +194,21 @@ kbd {
   
   .heart {
       top: -2px;
+  }
+}
+
+@media only screen and (max-device-width: 667px) { 
+  main {
+      display: block;
+      flex-flow: initial;
+      row-gap: initial;
+      column-gap: initial;
+      height: initial; 
+  }
+  
+  
+  .item {
+    width: initial;
+    margin-bottom: 3rem;
   }
 }
