@@ -19,4 +19,4 @@ jobs:
           OVH_HOSTING_PASSWORD: ${{ secrets.OVH_HOSTING_PASSWORD }}
         run: |
           echo "Deploying"
-          sshpass -p "$OVH_HOSTING_PASSWORD" rsync -av -e "ssh -o StrictHostKeyChecking=no" . $OVH_HOSTING_USER@$OVH_HOSTING_DOMAIN:/home/$OVH_HOSTING_USER/resume.mlcdf.fr
+          sshpass -p "$OVH_HOSTING_PASSWORD" rsync -av  --exclude '.*' --exclude 'LICENSE' -e "ssh -o StrictHostKeyChecking=no" . $OVH_HOSTING_USER@$OVH_HOSTING_DOMAIN:~/resume.mlcdf.fr
